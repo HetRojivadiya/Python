@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big & Beautiful Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover .card-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Big & Beautiful Portfolio</h1>
+
+        <div class="grid">
+            <div class="card animate-fadeInUp">
+                <img src="image1.jpg" alt="Image 1">
+                <div class="card-content">
+                    <h2>Project 1</h2>
+                    <p>This is a description of Project 1.</p>
+                </div>
+            </div>
+
+            <div class="card animate-fadeInUp">
+                <img src="image2.jpg" alt="Image 2">
+                <div class="card-content">
+                    <h2>Project 2</h2>
+                    <p>This is a description of Project 2.</p>
+                </div>
+            </div>
+
+            <div class="card animate-fadeInUp">
+                <img src="image3.jpg" alt="Image 3">
+                <div class="card-content">
+                    <h2>Project 3</h2>
+                    <p>This is a description of Project 3.</p>
+                </div>
+            </div>
+
+            <div class="card animate-fadeInUp">
+                <img src="image4.jpg" alt="Image 4">
+                <div class="card-content">
+                    <h2>Project 4</h2>
+                    <p>This is a description of Project 4.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
